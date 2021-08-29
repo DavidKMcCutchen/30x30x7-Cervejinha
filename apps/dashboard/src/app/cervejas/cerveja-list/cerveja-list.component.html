@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Escolhe A Sua Cerveja</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let cerveja of cervejas" data-test="cerveja-list-item" (click)="selected.emit(cerveja)">
+        <h3 matLine>{{cerveja.name}}</h3>
+        <p matLine> Brewery: {{cerveja.brewery}}</p>
+        <p matLine> Style: {{cerveja.style}}</p>
+        <p matLine> ABV: {{cerveja.abv}}</p>
+        
+        <button mat-icon-button (click)="cervejaViewed.emit(cerveja.id); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">chevron_left</mat-icon>
+        </button>
+
+
+        <button mat-icon-button (click)="deleted.emit(cerveja); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

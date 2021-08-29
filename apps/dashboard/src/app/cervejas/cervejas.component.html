@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <cerveja-cerveja-list
+        [cervejas]="allCervejas$ | async"
+        (selected)="selectCerveja($event)"
+        (deleted)="deleteCerveja($event)"
+        (cervejaViewed)="viewCerveja($event)"
+      ></cerveja-cerveja-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <cerveja-cerveja-details
+        [cerveja]="selectedCerveja$ | async"
+        (saved)="saveCerveja($event)"
+        (cancelled)="resetCerveja()"
+        [form]="form"
+      ></cerveja-cerveja-details>
+    </div>
+  </div>

@@ -1,0 +1,21 @@
+{
+  "cervejas": [
+    {
+      "id": 1,
+      "name": "Antarctica",
+      "brewery": "Antarctica Brewing",
+      "style": "Lager",
+      "ABV": "5.5",
+      "import": true,
+      "abv": 5
+    },
+    {
+      "id": 2,
+      "name": "Budweiser",
+      "brewery": "Anheiser-Busch",
+      "style": "Lager",
+      "abv": 4,
+      "import": false
+    }
+  ]
+}
